@@ -1,0 +1,138 @@
+:root {
+  --apple-black: #000000;
+  --apple-gray: #86868b;
+  --apple-blue: #0071e3;
+  --apple-white: #f5f5f7;
+}
+
+/* 1단계 리셋 + 전역스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--apple-black);
+  color: var(--apple-white);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 2단계 레이아웃 */
+.site-header {
+  /* 스크롤해도 상단에 고정 z-index:100은 다른 요소 위에 보이도록 설정함 */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* 뒤에 화면을 불투명하게 만들어준다. */
+  backdrop-filter: blur(10px);
+  display: flex;
+  /* 글자 양옆으로 끝에 입력되게끔. */
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+}
+
+.nav a {
+  color: var(--apple-white);
+  font-size: 16px;
+  margin-left: 25px;
+}
+
+.hero {
+  /* 구간 크기 얼마나 할건지 정하기 */
+  height: 80vh;
+  display: flex;
+  /* 한줄로 나열되어있는것들 밑으로 떨궈주는거 flex-direction: column; */
+  flex-direction: column;
+  /* 왼쪽에 있는거 중간으로 가게 만들어줌 */
+  align-items: center;
+  /* 맨위에 있는거 중간으로 떨궈줌 */
+  justify-content: center;
+}
+
+.hero h1 {
+  /* iPhone 16Pro 구간 */
+  font-size: 56px;
+  /* 밑에 글자랑 간격 띄우기 */
+  margin-bottom: 10px;
+}
+
+.hero p {
+  /* 지금까지와 차원이다른 구간 */
+  font-size: 24px;
+  color: var(--apple-gray);
+  /* 밑에 간격 띄우기 */
+  margin-bottom: 30px;
+}
+
+footer {
+  /* 글자 중간으로 가게 만들기 */
+  text-align: center;
+  /* 밑에랑 간격 40만큼 띄우기 */
+  padding: 40px;
+  color: var(--apple-gray);
+}
+
+/* 3단계 컴포넌트 스타일 */
+.btn-primary {
+  /* 더 알아보기 버튼 꾸미기 */
+  background-color: var(--apple-blue);
+  color: var(--apple-white);
+  /* 위아래 / 좌우 / 간격 띄우기 */
+  padding: 12px 24px;
+  border-radius: 24px;
+  /* 버튼에 갖다댔을때  효과속도 이만큼 할거다. */
+  transition: opacity 0.3s ease;
+}
+
+/* 버튼을 마우스에 갖다댔을때 효과 나타나게 해주는거 hover  */
+.btn-primary:hover {
+  opacity: 0.8;
+}
+
+.features {
+  /* 주요특징 / 카드들 꾸미기 */
+  /* 일단 글자 중간으로 모아 */
+  text-align: center;
+  padding: 80px 30px;
+}
+
+.features h2 {
+  /* 주요 특징 꾸미기 */
+  font-size: 36px;
+  /* 밑에거랑 간격 띄우기 */
+  margin-bottom: 40px;
+}
+
+.feature-cards {
+  /* 카드 세개 묶음으로 */
+  /* 카드 묶여있던거를 따로따로 분리시킴 */
+  display: flex;
+  /* 카드들 간격 띄욱기 */
+  gap: 20px;
+  /* 카드들 중간으로 오게 만들기 */
+  justify-content: center;
+}
+
+/* 4단계 세부 조정 */
+.feature-card {
+  /* 각각 카드들 꾸미기 */
+  background-color: #1d1d1f;
+  padding: 40px;
+  border-radius: 16px;
+  text-align: center;
+  /* 버튼 갖다댔을때 효과속도 이만큼 나타나게 해줄거다. */
+  transition: transform 0.4s ease;
+}
+
+.feature-card:hover {
+  transform: scale(1.1);
+  /* 그림자효과 나타나게 해주는거 */
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+}

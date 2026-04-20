@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        border-radius: 10px;
+        border: 2px solid #528e6e;
+        padding: 10px;
+      }
+
+      .item {
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        background-color: #528e6e;
+        border-radius: 10px;
+        margin: 5px;
+        border: 2px solid brown;
+        line-height: 100px;
+        color: white;
+      }
+
+      .container.column {
+        flex-direction: column;
+      }
+
+      .row-reverse {
+        flex-direction: row-reverse;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>flex-direection: row</h3>
+    <div class="container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+
+    <h3>flex-direection: column</h3>
+    <div class="container column">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+
+    <h3>flex-direection: row-reverse</h3>
+    <div class="container row-reverse">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+  </body>
+</html>
